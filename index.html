@@ -141,7 +141,7 @@ function picked(k){return [].slice.call(P[k].querySelectorAll('.chip input:check
 function collect(){var r=document.querySelector('input[name=t1]:checked');
 return{name:v('name'),studentId:v('sid'),faculty:v('fac'),year:v('yr'),phone:v('ph'),email:v('em'),role1:r?r.parentNode.querySelector('b').textContent:'',role2:v('t2'),tools:picked(1),experience:v('exp'),portfolio:v('port'),hours:v('hrs'),days:picked(2),events:v('ev'),equipment:v('eq'),commitments:v('ex'),challenge:v('ch'),why:v('why'),improve:v('imp'),source:v('src')}}
 function fail(m){var e=document.getElementById('senderr');e.textContent=m;e.style.display='block';nx.disabled=false;nx.textContent='Send application'}
-function finish(){P.forEach(function(p){p.classList.remove('on')});document.getElementById('done').classList.add('on');document.getElementById('nav').hidden=true;document.querySelector('.progress').hidden=true;window.scrollTo({top:0,behavior:'smooth'})}
+function finish(){document.getElementById('nav').style.display='none';P.forEach(function(p){p.classList.remove('on')});document.getElementById('done').classList.add('on');document.getElementById('nav').hidden=true;document.querySelector('.progress').hidden=true;window.scrollTo({top:0,behavior:'smooth'})}
 nx.onclick=function(){if(!valid())return;
 if(i<P.length-1){i++;show();return}
 document.getElementById('senderr').style.display='none';
